@@ -4,7 +4,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class Servidor {
+public class Servidor { // server
     public static void main(String[] args) {
         int portNumber = 1234;
         ArrayList<Despachador> escritores = new ArrayList<>();
