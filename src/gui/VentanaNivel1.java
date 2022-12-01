@@ -7,7 +7,7 @@ import net.Despachador;
 import static gui.VentanaPrincipal.colorBola;
 
 public class VentanaNivel1 extends JFrame {
-    Container panel;
+    private Container panel;
     public Tablero lienzo;
     public Despachador despachador;
    

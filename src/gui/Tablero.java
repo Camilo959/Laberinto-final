@@ -8,13 +8,14 @@ import java.awt.event.KeyListener;
 import java.util.HashMap;
 
 public class Tablero extends Canvas implements KeyListener {
-    private Color colorLaberinto = new Color(56,61,59); 
+
     private final int nFilas = 51;
     private final int nColumnas = 81;
     private final int altoB = 15;
     private final int anchoB = 15;
-    private int velocidad = 15;
 
+    private Color colorLaberinto = new Color(56,61,59); 
+    private int velocidad = 15;
     private int laberinto[][] = {
         {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
         {1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1},
@@ -71,6 +72,7 @@ public class Tablero extends Canvas implements KeyListener {
 
     public static HashMap<String, Jugador> jugadores = new HashMap<>();
     public static Despachador despachador;
+    
     public String jugadorPresente = "";
     public Laberinto lab = new Laberinto(nFilas, nColumnas, altoB, anchoB, laberinto,colorLaberinto);
 

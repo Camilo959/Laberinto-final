@@ -7,8 +7,9 @@ import java.awt.event.ActionListener;
 
 
 public class VentanaNiveles extends JFrame {
-    private JButton btnNivel1;
+
     private static VentanaNivel1 nivel1;
+    private JButton btnNivel1;
     private Fondo fondo;
 
     public VentanaNiveles() {

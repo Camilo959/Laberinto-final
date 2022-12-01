@@ -7,17 +7,20 @@ import java.awt.event.ActionListener;
 import java.awt.Font;
 
 public class VentanaPrincipal extends JFrame {
-    public static VentanaPrincipal ventana = new VentanaPrincipal();
-    public static String jugadorLab;
+
+    private Fondo fondo;
+    private JButton btnSalir;
+    private JTextField TFnombre;
     private JLabel L_laberinto;
     private JLabel L_creators;
     private JLabel L_color;
-    public JButton btnIniciar;
-    private JButton btnSalir;
-    private JTextField TFnombre;
+
+    public static VentanaPrincipal ventana = new VentanaPrincipal();
     public static String colorBola;
+    public static String jugadorLab;
+
+    public JButton btnIniciar;
     public JComboBox<String> listaColores;
-    private Fondo fondo;
 
     public VentanaPrincipal() {
         super("Menú Principal");
