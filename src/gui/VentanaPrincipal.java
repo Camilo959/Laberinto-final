@@ -47,7 +47,6 @@ public class VentanaPrincipal extends JFrame {
         L_laberinto.setFont(new Font("Arial Black", 1, 30));
         L_laberinto.setHorizontalAlignment(SwingConstants.CENTER);
         L_laberinto.setBackground(new Color(255,255,255,0));
-        //L_laberinto.setForeground(Color.white);
         this.add(L_laberinto);
 
         L_creators = new JLabel("By: Los tocayos & Dylan");
@@ -56,7 +55,6 @@ public class VentanaPrincipal extends JFrame {
         L_creators.setFont(new Font("Arial", 0, 11));
         L_creators.setHorizontalAlignment(SwingConstants.CENTER);
         L_creators.setBackground(new Color(255,255,255,0));
-        //L_creators.setForeground(Color.white);
         this.add(L_creators);
 
         L_color= new JLabel("Color :");
@@ -115,7 +113,6 @@ public class VentanaPrincipal extends JFrame {
         btnIniciar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //ventana.setVisible(false);
                 colorBola = (String)listaColores.getSelectedItem();
                 jugadorLab = TFnombre.getText();
                 if(jugadorLab.length() == 0){

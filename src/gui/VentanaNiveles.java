@@ -30,7 +30,7 @@ public class VentanaNiveles extends JFrame {
     }
 
     private void iniciarLabelsNiveles() {
-        JLabel mensajeJugador = new JLabel("Bienvenid@ " + VentanaPrincipal.jugadorLab); // Aqui nombre del jugador
+        JLabel mensajeJugador = new JLabel("Bienvenid@ " + VentanaPrincipal.jugadorLab);
         mensajeJugador.setOpaque(true);
         mensajeJugador.setBounds(25, 17, 350, 40);
         mensajeJugador.setFont(new Font("Arial Black", 0, 22));
@@ -52,7 +52,6 @@ public class VentanaNiveles extends JFrame {
         L_nivel1.setFont(new Font("Arial Black", 1, 15));
         L_nivel1.setHorizontalAlignment(SwingConstants.CENTER);
         L_nivel1.setBackground(new Color(255,255,255,0));
-        //panel3.add(L_nivel1);
     }
 
     private void iniciarBotonesNiveles() {
