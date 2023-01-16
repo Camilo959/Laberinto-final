@@ -1,13 +1,12 @@
-package gui;
+package view;
 
 import javax.swing.*;
 import java.awt.*;
-import net.Cliente;
 import net.Despachador;
 import static gui.VentanaPrincipal.colorBola;
 
 public class VentanaNivel1 extends JFrame {
-    Container panel;
+    public Container panel;
     public Tablero lienzo;
     public Despachador despachador;
    
@@ -20,18 +19,23 @@ public class VentanaNivel1 extends JFrame {
 
         panel = getContentPane();
         panel.setLayout((new FlowLayout()));
+        
         lienzo = new Tablero();
         panel.add(lienzo);
 
-        Cliente c = new Cliente();
+        /*Cliente c = new Cliente();
         c.conectar(this, lienzo);
 
-        conectar();
+        conectar();*/
     }
 
-    public void conectar() {
-        System.out.println(colorBola);
-        despachador.send("login:"+colorBola);
-        lienzo.jugadorPresente = colorBola;
+    public Tablero getLienzo(){
+        return lienzo; 
     }
+
 }
+/*public void conectar() {
+    System.out.println(colorBola);
+    despachador.send("login:"+colorBola);
+    lienzo.jugadorPresente = colorBola;
+}*/
