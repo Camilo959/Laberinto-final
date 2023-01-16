@@ -1,4 +1,4 @@
-package gui;
+package view;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -16,9 +16,9 @@ import javax.swing.text.*;
  *  of the parent text component. You are free to change the properties after
  *  class construction.
  */
-
 public class TextPrompt extends JLabel
-        implements FocusListener, DocumentListener {
+        implements FocusListener, DocumentListener
+{
     public enum Show {
         ALWAYS,
         FOCUS_GAINED,
