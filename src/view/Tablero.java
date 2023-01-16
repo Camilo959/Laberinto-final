@@ -45,4 +45,5 @@ public class Tablero extends Canvas {
     public Laberinto getLaberinto(){
         return lab;
     }
+    
 }
