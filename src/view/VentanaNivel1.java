@@ -2,13 +2,10 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
-import net.Despachador;
-import static gui.VentanaPrincipal.colorBola;
 
 public class VentanaNivel1 extends JFrame {
     public Container panel;
     public Tablero lienzo;
-    public Despachador despachador;
    
     public VentanaNivel1() {
         super("Nivel 1");
