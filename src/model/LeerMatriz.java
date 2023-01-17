@@ -6,13 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class LeerMatriz {
     private int[][] matriz;
     private int filas;
     private int columnas;
 
-    public void lectura(){
+    public void lectura() {
         try {
             Scanner sc = new Scanner(new File("src/matrix.txt"));
 
@@ -33,15 +32,8 @@ public class LeerMatriz {
 
             sc.close();
 
-            for (int i = 0; i < matriz.length; i++) {
-                for (int j = 0; j < matriz[i].length; j++) {
-                    System.out.print(matriz[i][j] + " ");
-                }
-                System.out.println(matriz);
-            }
         } catch (FileNotFoundException ex) {
             System.out.println("El archivo no existe");
-
         }
     }
 
@@ -49,12 +41,11 @@ public class LeerMatriz {
         return matriz;
     }
 
-    public int getFilas(){
+    public int getFilas() {
         return filas;
     }
 
-    public int getColumnas(){
+    public int getColumnas() {
         return columnas;
     }
 }
-

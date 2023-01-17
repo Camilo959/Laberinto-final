@@ -10,7 +10,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
-//import static gui.VentanaPrincipal.colorBola;
 
 public class Despachador extends Thread {
     private PrintWriter out;
@@ -87,7 +86,8 @@ public class Despachador extends Thread {
     {
         String[] datos = entrada.split(":");
         if (datos[0].equals("login")) {
-            jugadores.put(datos[1] , new Jugador(datos[1], null, 15, 15));
+            jugadores.put(datos[1] , new Jugador(datos[1], null, 948, 564)); // 960, 564
+            System.out.println(jugadores.size());
         } else if (datos[0].equals("mover")) {
             String[] datosJugador = datos[1].split(",");
             jugadores.get(datosJugador[0]).setX(Integer.parseInt(datosJugador[1]));
@@ -95,6 +95,7 @@ public class Despachador extends Thread {
         }
 
         String[] lista = new String[jugadores.size()];
+
         int index = 0;
         for (Jugador e: jugadores.values()) {
             lista[index++] = e.getNickname() + "," + e.getX() + "," + e.getY();
@@ -102,9 +103,11 @@ public class Despachador extends Thread {
 
         for (Despachador e: escritores) {
             e.send(String.join("#", lista));
+            System.out.println("Jugadores: " + e);
         }
 
         Almacen.escribir(jugadores);
+
     }
 
     public void send(String inputLine)
