@@ -1,3 +1,8 @@
+/*
+ * 
+ * Clase que se encarga de manejar un servidor multiusuario.
+ */
+
 package model;
 
 import java.io.IOException;
@@ -8,13 +13,11 @@ import java.util.HashMap;
 public class Servidor
 {
     private int portNumber;
-    private int max_num_jugadores;
     private ArrayList<Despachador> escritores = new ArrayList<>();
     private HashMap<String, Jugador> jugadores = new HashMap<>();
 
-    public Servidor(int portNumber, int max_num_jugadores) {
+    public Servidor(int portNumber) {
         this.portNumber = portNumber;
-        this.max_num_jugadores = max_num_jugadores;
     }
 
     public void conectar() throws IOException
@@ -30,7 +33,6 @@ public class Servidor
             lector.jugadores = jugadores;
             lector.start();
         }
-
         //serverSocket.close();
     }
 }

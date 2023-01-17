@@ -1,16 +1,18 @@
+/**
+* Clase MainCliente encargada de iniciar el programa cliente
+* y mostrar la ventana principal de la interfaz gráfica.
+*/
+
 import view.VentanaPrincipal;
 
-/**
- * clase ejecutable para el cliente.
- * Muestra una interface grafica de usuario
- */
 public class MainCliente {
-    public static int ju = 0;
+    /**
+    * Método main encargado de iniciar el programa cliente
+    * @param args no se utilizan en este caso.
+    */
     public static void main(String[] args) {
         // Vista
         VentanaPrincipal ventana = new VentanaPrincipal();
         ventana.setVisible(true);
-        ju+=1;
-        System.out.println(ju);
     }
 }

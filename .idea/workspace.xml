@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef21b6e6-5331-4ca8-9e82-b861b12c11e5" name="Changes" comment="" />
+    <list default="true" id="ef21b6e6-5331-4ca8-9e82-b861b12c11e5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/doc/doc.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainServidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainServidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Fondo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Fondo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VentanaPrincipal.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +31,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/dylanfarkasquiza/Documents/Programación/MiniProyecto-2"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Users/IVAN CAMILO/Desktop/Ejemplos java/MiniProyecto-2"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
