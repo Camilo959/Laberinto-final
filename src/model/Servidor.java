@@ -1,3 +1,8 @@
+/*
+ * 
+ * Clase que se encarga de manejar un servidor multiusuario.
+ */
+
 package model;
 
 import java.io.IOException;

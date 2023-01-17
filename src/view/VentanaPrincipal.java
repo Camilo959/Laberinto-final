@@ -134,7 +134,7 @@ public class VentanaPrincipal extends JFrame {
                 controlador.conectar();
                 while(Tablero.getcantJugadores()<1) {
                     JOptionPane.showMessageDialog(VentanaPrincipal.this, "ESPERANDO JUGADORES...");
-                } // error
+                }
                 Music musica = new Music();
                 musica.AudioIniciar();
                 nivel1.setVisible(true); 
