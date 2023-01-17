@@ -5,14 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Font;
-import controller.*;
+import controller.Controlador;
+import model.Music;
 
 public class VentanaPrincipal extends JFrame {
-    public JButton btnIniciar;
-    public JComboBox<String> listaColores;
-    // static String colorBola;
-    //public static VentanaPrincipal ventana = new VentanaPrincipal();
-    public static String jugadorLab;
+
     private String colorBola;
     private JLabel L_laberinto;
     private JLabel L_creators;
@@ -20,6 +17,10 @@ public class VentanaPrincipal extends JFrame {
     private JButton btnSalir;
     private JTextField TFnombre;
     private Fondo fondo;
+    private static VentanaNivel1 nivel1;
+    public JButton btnIniciar;
+    public JComboBox<String> listaColores;
+    public static String jugadorLab;
 
     public VentanaPrincipal() {
         super("Menú Principal");
@@ -32,7 +33,8 @@ public class VentanaPrincipal extends JFrame {
         cerrarJuego();
     }
 
-    public void configVentana(){
+    // Configuracion de la ventana
+    public void configVentana() {
         fondo = new Fondo();
         this.setContentPane(fondo);
         this.setSize(350, 380);
@@ -42,13 +44,14 @@ public class VentanaPrincipal extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+    // Crear etiquetas
     public void iniciarLabels() {
         L_laberinto = new JLabel("Laberinto");
         L_laberinto.setOpaque(true);
         L_laberinto.setBounds(80, 30, 200, 40);
         L_laberinto.setFont(new Font("Arial Black", 1, 30));
         L_laberinto.setHorizontalAlignment(SwingConstants.CENTER);
-        L_laberinto.setBackground(new Color(255,255,255,0));
+        L_laberinto.setBackground(new Color(255, 255, 255, 0));
         this.add(L_laberinto);
 
         L_creators = new JLabel("By: Los tocayos & Dylan");
@@ -56,26 +59,26 @@ public class VentanaPrincipal extends JFrame {
         L_creators.setBounds(182, 325, 200, 30);
         L_creators.setFont(new Font("Arial", 0, 11));
         L_creators.setHorizontalAlignment(SwingConstants.CENTER);
-        L_creators.setBackground(new Color(255,255,255,0));
+        L_creators.setBackground(new Color(255, 255, 255, 0));
         this.add(L_creators);
 
-        L_color= new JLabel("Color :");
+        L_color = new JLabel("Color :");
         L_color.setOpaque(true);
         L_color.setBounds(93, 162, 60, 25);
         L_color.setFont(new Font("Arial Black", 0, 15));
         L_color.setHorizontalAlignment(SwingConstants.CENTER);
-        L_color.setBackground(new Color(255,255,255,0));
+        L_color.setBackground(new Color(255, 255, 255, 0));
         this.add(L_color);
     }
 
-    //Crear Botones
+    // Crear Botones
     public void iniciarBotones() {
         btnIniciar = new JButton("Iniciar");
         btnIniciar.setOpaque(true);
         btnIniciar.setBounds(125, 220, 110, 35);
         btnIniciar.setFont(new Font("Arial Black", 0, 20));
         btnIniciar.setHorizontalAlignment(SwingConstants.CENTER);
-        btnIniciar.setBackground(new Color(240,240,240));
+        btnIniciar.setBackground(new Color(240, 240, 240));
         btnIniciar.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.add(btnIniciar);
 
@@ -89,52 +92,58 @@ public class VentanaPrincipal extends JFrame {
         this.add(btnSalir);
     }
 
-    //Crear caja de texto
+    // Crear caja de texto
     public void iniciarTextFields() {
         TFnombre = new JTextField(10);
         TFnombre.setBounds(105, 105, 150, 35);
-        TextPrompt placeholder = new TextPrompt("Ingrese su sombre",TFnombre);
-        placeholder.setFont(new Font("Arial",2,13));
+        TextPrompt placeholder = new TextPrompt("Ingrese su sombre", TFnombre);
+        placeholder.setFont(new Font("Arial", 2, 13));
         placeholder.setForeground(Color.lightGray);
         this.add(TFnombre);
     }
 
-    //Selección de color
-    public void iniciarColor(){
-        String[] colores = {"Rojo","Verde","Azul","Amarillo","Magenta"};
+    // Seleccion de color
+    public void iniciarColor() {
+        String[] colores = { "Rojo", "Verde", "Azul", "Amarillo", "Magenta" };
         listaColores = new JComboBox<>(colores);
-        listaColores.setBounds(155,162,120,30);
+        listaColores.setBounds(155, 162, 120, 30);
         listaColores.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        listaColores.setBackground(new Color(255,255,255));
-        listaColores.setFont(new Font("Arial",0,13));
+        listaColores.setBackground(new Color(255, 255, 255));
+        listaColores.setFont(new Font("Arial", 0, 13));
         this.add(listaColores);
     }
 
-    //iniciar la segunda ventana
+    // iniciar la segunda ventana
     public void iniciarVentana2() {
         btnIniciar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //ventana.setVisible(false);
-                colorBola = (String)listaColores.getSelectedItem();
+
+                colorBola = (String) listaColores.getSelectedItem();
                 jugadorLab = TFnombre.getText();
-                if(jugadorLab.length() == 0){
+                if (jugadorLab.length() == 0) {
                     jugadorLab = "User";
                 }
-                VentanaNivel1 nivel1 = new VentanaNivel1();
-                nivel1.setVisible(true);
+
+                nivel1 = new VentanaNivel1(jugadorLab);
 
                 // Controlador
-                Controlador controlador = new Controlador(nivel1,colorBola);
+                Controlador controlador = new Controlador(nivel1, colorBola, jugadorLab);
                 nivel1.getLienzo().addKeyListener(controlador);
-        
+
                 controlador.conectar();
+                while(Tablero.getcantJugadores()<1) {
+                    JOptionPane.showMessageDialog(VentanaPrincipal.this, "ESPERANDO JUGADORES...");
+                } // error
+                Music musica = new Music();
+                musica.AudioIniciar();
+                nivel1.setVisible(true); 
             }
         });
     }
-    
-    //cerrar el juego
-    public void cerrarJuego(){
+
+    // Cerrar el juego
+    public void cerrarJuego() {
         btnSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -144,12 +153,11 @@ public class VentanaPrincipal extends JFrame {
         });
     }
 
-    public String getColorBola(){
+    public String getColorBola() {
         return colorBola;
     }
+
+    public static void finJuego() {
+        nivel1.setVisible(false);
+    }
 }
-
-
-
-
-

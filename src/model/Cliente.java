@@ -13,8 +13,7 @@ public class Cliente {
         this.portNumber = portNumber;
     }
 
-    public Despachador conectar(VentanaNivel1 gui) throws Exception
-    {
+    public Despachador conectar(VentanaNivel1 gui) throws Exception {
         Socket kkSocket = new Socket(hostName, portNumber);
 
         Despachador lector = new Despachador(kkSocket);

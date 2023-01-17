@@ -9,7 +9,7 @@ import java.util.HashMap;
  * Implementa el patron Singleton (Solitario)
  */
 public final class Almacen {
-    private  Almacen instancia;  // objeto solitario
+    private  Almacen instancia;
 
     private Almacen(){}
 
