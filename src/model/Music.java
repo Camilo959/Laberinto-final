@@ -3,8 +3,17 @@ package model;
 import javax.sound.sampled.*;
 import java.io.*;
 
+/**
+ * Clase para traer un archivo .wav y reproducirlo.
+ */
+
 public class Music {
 
+    /**
+     * Método encargado de buscar y reproducir el audio.
+     * @param
+     * @return
+     */
     public void AudioIniciar() {
         try {
             // Carga el archivo de audio
@@ -23,5 +32,4 @@ public class Music {
             e.printStackTrace();
         }
     }
-
 }

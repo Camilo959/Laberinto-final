@@ -14,6 +14,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;
 
+/**
+ * Clase que se encarga de administrar la vista y el modelo.
+ */
+
 public class Controlador implements KeyListener {
     private VentanaNivel1 vistaNivel;
     private String colorball;
@@ -101,10 +105,6 @@ public class Controlador implements KeyListener {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(vistaNivel, "Error: " + e.getMessage());
         }
-    }
-
-    public void desconectar() {
-        
     }
 
     public void obtenerMatriz() {

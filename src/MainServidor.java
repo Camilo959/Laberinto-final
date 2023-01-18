@@ -1,3 +1,5 @@
+import model.Servidor;
+
 /**
  * Clase MainServidor encargada de iniciar el programa servidor
  * y establecer la conexión con los clientes
@@ -5,8 +7,6 @@
  * @autor: Dylan Farkas Quiza (2183118)
  * @autor: Johan Camilo Imbol (2177888)
  */
-import model.Servidor;
-
 public class MainServidor {
     /**
      * Método main encargado de iniciar el programa servidor
