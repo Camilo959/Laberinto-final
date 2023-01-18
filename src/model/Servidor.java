@@ -35,4 +35,8 @@ public class Servidor
         }
         //serverSocket.close();
     }
+
+    public static void cerrarTodo() {
+        System.exit(0);
+    }
 }
