@@ -76,6 +76,9 @@ public class Despachador extends Thread {
         colores.put( "Azul", Color.BLUE);
         colores.put( "Amarillo", Color.yellow);
         colores.put( "Magenta", Color.MAGENTA);
+        colores.put("Aguamarina", new Color(128, 255, 219));
+        colores.put("Rosa", new Color(239, 39, 222, 255));
+        colores.put("Café", new Color(81, 60, 44));
 
         Color c = colores.get(colorBola);
 
@@ -86,7 +89,7 @@ public class Despachador extends Thread {
     {
         String[] datos = entrada.split(":");
         if (datos[0].equals("login")) {
-            jugadores.put(datos[1] , new Jugador(datos[1], null, 948, 564)); // 960, 564
+            jugadores.put(datos[1] , new Jugador(datos[1], null, 12, 12)); // 948, 564
             System.out.println(jugadores.size());
         } else if (datos[0].equals("mover")) {
             String[] datosJugador = datos[1].split(",");

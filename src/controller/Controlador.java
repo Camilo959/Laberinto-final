@@ -4,6 +4,8 @@ import model.Cliente;
 import model.Despachador;
 import model.Jugador;
 import model.LeerMatriz;
+import model.Servidor;
+
 import javax.swing.*;
 import view.VentanaNivel1;
 import view.VentanaPrincipal;
@@ -71,6 +73,7 @@ public class Controlador implements KeyListener {
         if (_x == 948 && _y == 600) {
             JOptionPane.showMessageDialog(vistaNivel, "Felicidades " + nameJugador + " completaste el laberinto!");
             VentanaPrincipal.finJuego();
+            Servidor.cerrarTodo();
         }
 
         despachador.send("mover:" + jugadorPresente + "," + _x + "," + _y);

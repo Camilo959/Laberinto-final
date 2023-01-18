@@ -104,7 +104,7 @@ public class VentanaPrincipal extends JFrame {
 
     // Seleccion de color
     public void iniciarColor() {
-        String[] colores = { "Rojo", "Verde", "Azul", "Amarillo", "Magenta" };
+        String[] colores = { "Rojo", "Verde", "Azul", "Amarillo", "Magenta", "Aguamarina", "Rosa", "Café" };
         listaColores = new JComboBox<>(colores);
         listaColores.setBounds(155, 162, 120, 30);
         listaColores.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -159,5 +159,6 @@ public class VentanaPrincipal extends JFrame {
 
     public static void finJuego() {
         nivel1.setVisible(false);
+        
     }
 }
