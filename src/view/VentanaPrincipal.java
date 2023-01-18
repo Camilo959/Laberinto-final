@@ -8,20 +8,37 @@ import java.awt.Font;
 import controller.Controlador;
 import model.Music;
 
+/**
+ * Clase que se encarga de mostrar la 
+ * ventana principal
+ */
+
 public class VentanaPrincipal extends JFrame {
 
+    // Variable para el guardar el color de la bola.
     private String colorBola;
+    // Variables para los JLabel de la ventana.
     private JLabel L_laberinto;
     private JLabel L_creators;
     private JLabel L_color;
+    // Variable para el boton de iniciar y salir.
     private JButton btnSalir;
+    private JButton btnIniciar;
+    // Variable para el JTextFiel de la ventana.
     private JTextField TFnombre;
+    // Variable para colocar el fondo de la ventana.
     private Fondo fondo;
+    // Variable que crea la ventana del juego.
     private static VentanaNivel1 nivel1;
-    public JButton btnIniciar;
+    // Variable para mostrar las opciones de colores.
     public JComboBox<String> listaColores;
+    // Variable para guardar el nombre del jugador.
     public static String jugadorLab;
 
+    /**
+     * Método contructor de la clase para iniciar la ventana
+     * principal con sus componentes
+     */
     public VentanaPrincipal() {
         super("Menú Principal");
         configVentana();
@@ -33,7 +50,7 @@ public class VentanaPrincipal extends JFrame {
         cerrarJuego();
     }
 
-    // Configuracion de la ventana
+    // Método para la Configuracion de la ventana.
     public void configVentana() {
         fondo = new Fondo();
         this.setContentPane(fondo);
@@ -44,8 +61,8 @@ public class VentanaPrincipal extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    // Crear etiquetas
-    public void iniciarLabels() {
+    // Método para crear las etiquetas de la ventana.
+        public void iniciarLabels() {
         L_laberinto = new JLabel("Laberinto");
         L_laberinto.setOpaque(true);
         L_laberinto.setBounds(80, 30, 200, 40);
@@ -71,7 +88,7 @@ public class VentanaPrincipal extends JFrame {
         this.add(L_color);
     }
 
-    // Crear Botones
+    // Método para crear los botones de la ventana.
     public void iniciarBotones() {
         btnIniciar = new JButton("Iniciar");
         btnIniciar.setOpaque(true);
@@ -92,7 +109,7 @@ public class VentanaPrincipal extends JFrame {
         this.add(btnSalir);
     }
 
-    // Crear caja de texto
+    // Método para crear las cajas de texto de la ventana.
     public void iniciarTextFields() {
         TFnombre = new JTextField(10);
         TFnombre.setBounds(105, 105, 150, 35);
@@ -102,7 +119,7 @@ public class VentanaPrincipal extends JFrame {
         this.add(TFnombre);
     }
 
-    // Seleccion de color
+    // Método para crear seleccionar el color de la bola.
     public void iniciarColor() {
         String[] colores = { "Rojo", "Verde", "Azul", "Amarillo", "Magenta", "Aguamarina", "Rosa", "Café" };
         listaColores = new JComboBox<>(colores);
@@ -113,7 +130,7 @@ public class VentanaPrincipal extends JFrame {
         this.add(listaColores);
     }
 
-    // iniciar la segunda ventana
+    // Método para iniciar la segunda ventana.
     public void iniciarVentana2() {
         btnIniciar.addActionListener(new ActionListener() {
             @Override
@@ -142,7 +159,7 @@ public class VentanaPrincipal extends JFrame {
         });
     }
 
-    // Cerrar el juego
+    // Método para cerrar el cliente local.
     public void cerrarJuego() {
         btnSalir.addActionListener(new ActionListener() {
             @Override
@@ -153,12 +170,19 @@ public class VentanaPrincipal extends JFrame {
         });
     }
 
+    /**
+     * Método para obtener el color de bola.
+     * @param
+     * @return objeto de tipo String
+     */
     public String getColorBola() {
         return colorBola;
     }
 
+    /**
+     * Método para cerrar la ventana del juego.
+     */
     public static void finJuego() {
-        nivel1.setVisible(false);
-        
+        nivel1.setVisible(false);        
     }
 }

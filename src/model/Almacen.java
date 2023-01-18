@@ -9,18 +9,30 @@ import java.util.HashMap;
  * Implementa el patron Singleton (Solitario)
  */
 public final class Almacen {
-    private  Almacen instancia;
+    // Varible de instancia de tipo objeto Almacen.
+    private Almacen instancia;
 
+    /**
+     * Método constructor.
+     */
     private Almacen(){}
 
+    /**
+     * Método que retorna la instancia del objeto de tipo Almacen.
+     * @return Objeto de tipo Almacen.
+     */
     public Almacen getInstancia(){
         if (instancia == null) {
             instancia = new Almacen();
         }
-
         return instancia;
     }
 
+    /**
+     * Método que se encarga de leer el contenido de un .txt para traer
+     * las coordenadas del jugador
+     * @return objeto de tipo HashMap
+     */
     public HashMap<String, Jugador> leer(){
         HashMap<String, Jugador> jugadores = new HashMap<>();
 
@@ -48,6 +60,10 @@ public final class Almacen {
         return jugadores;
     }
 
+    /**
+     * Método para guardar las coordenadas de los jugadores en un .txt.
+     * @param jugadores
+     */
     public static void escribir(HashMap<String, Jugador> jugadores){
 
         try {

@@ -11,13 +11,24 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Clase que extiende de la clase Thread 
+ * y seencarca de enviar y administrar a los jugadores.
+ */
+
 public class Despachador extends Thread {
+
     private PrintWriter out;
     private BufferedReader in;
     public VentanaNivel1 gui = null;
     public ArrayList<Despachador> escritores = new ArrayList<>();
     public HashMap<String, Jugador> jugadores = new HashMap<>();
 
+    /**
+     * Método constructor para iniciarlizar
+     * el BufferedReader y el PrintWriter.
+     * @param socket
+     */
     public Despachador(Socket socket) {
         try {
             this.in = new BufferedReader(
@@ -29,6 +40,9 @@ public class Despachador extends Thread {
         }
     }
 
+    /**
+     * Método run que ejecuta el hilo.
+     */
     public void run(){
         try {
             leer();
@@ -37,6 +51,11 @@ public class Despachador extends Thread {
         }
     }
 
+    /**
+     * Método para procesar la entrada de los 
+     * jugadores.
+     * @throws IOException
+     */
     private void leer() throws IOException  {
         String inputLine;
         while ((inputLine = in.readLine()) != null) {
@@ -50,6 +69,12 @@ public class Despachador extends Thread {
         }
     }
 
+    /**
+     * Método que recolecta la información del jugador
+     * para crear un nuevo objeto de tipo Jugador para 
+     * añadirlo al HashMap de la ventana del juego.
+     * @param entrada
+     */
     public void procesarCliente(String entrada)
     {
         String[] datosJugadores = entrada.split("#");
@@ -68,6 +93,12 @@ public class Despachador extends Thread {
         gui.getLienzo().repaint();
     }
 
+    /**
+     * Método para obtener el color elegido por el 
+     * jugador en la ventana principal.
+     * @param colorBola
+     * @return objeto de tipo Color
+     */
     public static Color getColor(String colorBola)
     {
         HashMap<String, Color> colores = new HashMap<>();
@@ -85,6 +116,12 @@ public class Despachador extends Thread {
         return c;
     }
 
+    /**
+     * Método que crea una lista de cadenas con la información de todos 
+     * los jugadores en el HashMap de "jugadores" y la envía a todos los
+     * objetos "Despachador" en la lista "escritores".
+     * @param entrada
+     */
     public void procesarServidor(String entrada)
     {
         String[] datos = entrada.split(":");
@@ -110,9 +147,12 @@ public class Despachador extends Thread {
         }
 
         Almacen.escribir(jugadores);
-
     }
 
+    /**
+     * Método para mostrar la información del jugador por consola.
+     * @param inputLine
+     */
     public void send(String inputLine)
     {
         try {

@@ -6,11 +6,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase que lee la matriz de un .txt y la guarda en un 
+ * arreglo de tipo entero.
+ */
+
 public class LeerMatriz {
+    // Variable de informacion de la matriz.
     private int[][] matriz;
     private int filas;
     private int columnas;
 
+    /**
+     * Método encargado de leer la matriz de un .txt,
+     */
     public void lectura() {
         try {
             Scanner sc = new Scanner(new File("src/matrix.txt"));
@@ -37,14 +46,26 @@ public class LeerMatriz {
         }
     }
 
+    /**
+     * Método get de la matriz.
+     * @return matriz
+     */
     public int[][] getMatriz() {
         return matriz;
     }
 
+    /**
+     * Método get de las filas de la matriz.
+     * @return variable de tipo entero
+     */
     public int getFilas() {
         return filas;
     }
 
+    /**
+     * Método get de las columnas de la matriz.
+     * @return variable de tipo entero
+     */
     public int getColumnas() {
         return columnas;
     }
